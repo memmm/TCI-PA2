@@ -17,10 +17,12 @@ public class BookTest {
     @Test
     public void book_IfNullOrEmpty_IllegalArgumentExceptionIsThrown() {
         //arrange
-
+        Book b = new Book("Hart's Hope", "Orson Scott Card");
         //act
-
+        String name = b.getName();
         //assert
+        Assert.assertNotNull(b);
+        Assert.assertNotNull(name);
     }
 
     @Test
