@@ -6,12 +6,23 @@ public class BookTest {
     @Test
     public void chapterName_IsNotNull() {
         //arrange
+        Chapter c = new Chapter("The Polyjuice Potion", "11.3");
+        //act
+        String cName = c.getName();
+        //assert
+        Assert.assertNotNull(cName);
+
+    }
+
+    @Test
+    public void book_IfNullOrEmpty_IllegalArgumentExceptionIsThrown() {
+        //arrange
 
         //act
 
         //assert
-
     }
+
     @Test
     public void chapterNumber_IsStringWithMaxTwoLevels() {
 
@@ -32,11 +43,6 @@ public class BookTest {
     }
     @Test
     public void chapter_IsComparable() {
-
-    }
-
-    @Test
-    public void book_IfNullOrEmpty_IllegalArgumentExceptionIsThrown() {
 
     }
 
