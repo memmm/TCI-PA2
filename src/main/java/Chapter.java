@@ -4,10 +4,17 @@ public class Chapter {
 
     public Chapter(String name, String number) {
         this.name = name;
-        this.number = number;
+        if (number.matches("^[^.]*.[^.]*$"))
+            this.number = number;
+        else throw new IllegalArgumentException(" A chapter number can be only 2 levels deep, e.g. 11.3");
+
     }
 
     public String getName() {
         return name;
+    }
+
+    public String getNumber() {
+        return number;
     }
 }

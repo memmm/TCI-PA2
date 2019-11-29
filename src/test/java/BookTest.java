@@ -30,7 +30,7 @@ public class BookTest {
     }
 
     @Test
-    public void chapterNumber_IsStringWithMaxTwoLevels() {
+    public void chapterNumber_IsAStringWithMaxTwoLevels() {
         //arrange
         Chapter c = new Chapter("The Polyjuice Potion", "11.3");
         //act
@@ -40,9 +40,12 @@ public class BookTest {
         assertThat(number, matchesPattern("^[^.]*.[^.]*$"));
     }
 
-    @Test
+    @Test (expected = IllegalArgumentException.class)
     public void chapterNameAndNumber_IfWrongParams_IllegalArgumentExceptionIsThrown() {
-
+        //arrange
+        Chapter c = new Chapter("The Polyjuice Potion", "13");
+        //act
+        //assert
     }
 
     @Test
