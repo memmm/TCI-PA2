@@ -1,6 +1,10 @@
 import org.junit.Assert;
 import org.junit.Test;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
+import static org.hamcrest.CoreMatchers.*;
+
 public class BookTest {
 
     @Test
@@ -27,11 +31,17 @@ public class BookTest {
 
     @Test
     public void chapterNumber_IsStringWithMaxTwoLevels() {
-
+        //arrange
+        Chapter c = new Chapter("The Polyjuice Potion", "11.3");
+        //act
+        String number = c.getNumber();
+        //assert
+        assertThat(number, isA(String.class));
+        assertThat(number, matchesPattern("^[^.]*.[^.]*$"));
     }
 
     @Test
-    public void chapterNameAndNumber_IfError_IllegalArgumentExceptionIsThrown() {
+    public void chapterNameAndNumber_IfWrongParams_IllegalArgumentExceptionIsThrown() {
 
     }
 
