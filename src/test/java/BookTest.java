@@ -4,70 +4,58 @@ import org.junit.Test;
 public class BookTest {
 
     @Test
-    public void nrOfItems_WhenNoneArePresent_IsZero() {
+    public void chapterName_IsNotNull() {
         //arrange
-        BasicStatisticInterface bs = new Book();
+
         //act
-        int nrOfItems = bs.numberOfDataItems();
+
         //assert
-        Assert.assertSame(0, nrOfItems);
+
     }
     @Test
-    public void nrOfItems_AfterAdding_IsNotZero() {
-        //arrange
-        BasicStatisticInterface bs = new Book();
-        //act
-        bs.addDoubleToData(2.42);
-        int nrOfItems = bs.numberOfDataItems();
-        //assert
-        Assert.assertNotSame(0, nrOfItems);
+    public void chapterNumber_IsStringWithMaxTwoLevels() {
+
     }
 
     @Test
-    public void nrOfItems_AfterClearingData_IsZero() {
-        //arrange
-        BasicStatisticInterface bs = new Book();
-        //act
-        bs.addDoubleToData(2.42);
-        bs.clearData();
-        int nrOfItems = bs.numberOfDataItems();
-        //assert
-        Assert.assertSame(0, nrOfItems);
+    public void chapterNameAndNumber_IfError_IllegalArgumentExceptionIsThrown() {
+
     }
 
     @Test
-    public void nrOfItems_AfterAddingItems_IsIncreasedWithSameNrOfItems() {
-        //arrange
-        BasicStatisticInterface bs = new Book();
-        //act
-        bs.addDoubleToData(2.42);
-        bs.addDoubleToData(1.42);
-        bs.addDoubleToData(3.62);
-        int nrOfItems = bs.numberOfDataItems();
-        //assert
-        Assert.assertSame(3, nrOfItems);
+    public void chapter_OverridesEquals() {
+
+    }
+    @Test
+    public void chapter_OverridesHashCode() {
+
+    }
+    @Test
+    public void chapter_IsComparable() {
+
     }
 
     @Test
-    public void sumOfItems_AfterAddingAndCalculating_IsCorrect() {
-        //arrange
-        BasicStatisticInterface bs = new Book();
-        //act
-        bs.addDoubleToData(2.42);
-        bs.addDoubleToData(1.00);
-        bs.addDoubleToData(3.58);
-        Double sumOfItems = bs.sum();
-        //assert
-        Assert.assertEquals((Double)7.00, sumOfItems);
+    public void book_IfNullOrEmpty_IllegalArgumentExceptionIsThrown() {
+
     }
 
     @Test
-    public void sumOfItems_WithNoItemAdded_IsZero() {
-        //arrange
-        BasicStatisticInterface bs = new Book();
-        //act
-        Double sumOfItems = bs.sum();
-        //assert
-        Assert.assertEquals( (Double) 0.0, sumOfItems);
+    public void chapter_WhenAddedToBook_IsCreatedWithNameAndNumberParams() {
+
     }
+    @Test
+    public void chapter_WhenAddedToBook_IsUnique() {
+
+    }
+
+    @Test
+    public void chapter_IfNotUnique_IllegalArgumentExceptionIsThrown() {
+
+    }
+    @Test
+    public void tableOfContents_WhenGetting_IsReturnedAsSetInNaturalOrder() {
+
+    }
+
 }
