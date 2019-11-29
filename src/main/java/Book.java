@@ -4,36 +4,20 @@ import java.util.Arrays;
 /**
  * very simple implementation of the BasicStatisticInterface
  */
-public class Book implements BasicStatisticInterface {
+public class Book {
 
-    private ArrayList<Double> items;
+    private String name;
+    private String author;
 
-    public Book() {
-        items = new ArrayList<>();
+    public Book(String name, String author) {
+        this.name = name;
+        this.author = author;
     }
 
-    @Override
-    public void addDoubleToData(Double valueToAdd){
-        items.add(valueToAdd);
+    public String getName() {
+        return name;
     }
 
-    @Override
-    public void clearData(){
-        items.clear();
-    }
 
-    @Override
-    public int numberOfDataItems(){
-        return items.size();
-    }
-
-    @Override
-    public Double sum(){
-        Double sum = 0.0;
-        for (Double value : items) {
-            sum +=value;
-        }
-        return sum;
-    }
 
 }
